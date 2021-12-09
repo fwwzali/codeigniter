@@ -48,4 +48,18 @@ class M_karyawan extends CI_Model
 		$this->db->where('id_karyawan',$id_karyawan);
 		return $this->db->get('karyawan')->result();
 	}
+
+	function update_karyawan($data)
+	{
+		$data_in = array(
+			"nama" => $data['nama'],
+			"alamat" => $data['alamat'],
+			"id_jabatan" => $data['id_jabatan'],
+			"username" => $data['username'],
+			"password" => md5($data['password']),
+			"hire_date" => $data['hire_date'],
+		);
+		$this->db->where('id_karyawan',$data['id_karyawan']);
+		$this->db->update('karyawan',$data_in);
+	}
 }

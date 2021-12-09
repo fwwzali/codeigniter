@@ -9,6 +9,8 @@
 
 	<?php foreach ($karyawan as $emp) : ?>
 
+	<input type="hidden" name="id_karyawan" value="<?php echo $emp->id_karyawan ?>">
+
 	<div class="mb-3">
 	  <label class="form-label">Nama</label>
 	  <input type="text" class="form-control" name="nama" value="<?php echo $emp->nama; ?>">
