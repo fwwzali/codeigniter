@@ -11,6 +11,11 @@ class Karyawan extends CI_Controller
 		parent::__construct();
 		$this->load->model('m_karyawan','dbkaryawan');
 		$this->load->model('m_jabatan','dbjabatan');
+
+		//cek login
+		if ($this->session->userdata('user')==null) {
+			redirect('login');
+		}
 	}
 
 	function index()

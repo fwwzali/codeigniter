@@ -15,6 +15,11 @@ class Jabatan extends CI_Controller
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
+		//cek login
+		if ($this->session->userdata('user')==null) {
+			redirect('login');
+		}
+
 	}
 
 	//menampilkan data jabatan

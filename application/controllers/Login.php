@@ -21,13 +21,14 @@ class Login extends CI_Controller
 	{
 		$data = $this->input->post();
 		$check = $this->dblogin->check_login($data);
+		
 		if ($check > 0) {
 			//proses masukan data ke session
 			//redirect ke home
 			$data_session = array(
 				"username" => $username,
 			);
-			$this->session->set_userdata($data_session);
+			$this->session->set_userdata('user',$data_session);
 			redirect("karyawan");
 		}
 		else{
