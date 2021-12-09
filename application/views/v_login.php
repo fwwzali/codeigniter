@@ -52,11 +52,11 @@
     <h1 class="h3 mb-3 fw-normal">Sistem Pegawai</h1>
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="username">
+      <input type="text" class="form-control" id="floatingInput" placeholder="username" name="username">
       <label for="floatingInput">username</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
       <label for="floatingPassword">Password</label>
     </div>
 
