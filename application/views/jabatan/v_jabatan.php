@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title><?php echo $title; ?></title>
-</head>
-<body>
+<?php 
+	$this->load->view('template/header');
+	$this->load->view('template/sidebar');
+ ?>
+
 
 	<h3><?php echo $title; ?></h3>
 	<?php echo $this->session->flashdata('msg'); ?>
@@ -32,8 +30,6 @@
 	</table>
 	<?php echo $this->pagination->create_links(); ?>
 
-</body>
-</html>
 
 
 <style type="text/css">
@@ -44,3 +40,7 @@
 		color: red;
 	}
 </style>
+
+ <?php 
+ 	$this->load->view('template/footer')
+  ?>
