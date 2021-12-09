@@ -77,6 +77,19 @@ class Karyawan extends CI_Controller
 		}
 	}
 
+	function delete($id_karyawan)
+	{
+		$res = $this->dbkaryawan->delete_karyawan($id_karyawan);
+		//isi pesan
+		if ($res > 0) {
+			$this->session->set_flashdata('msg',success_msg("data berhasil dihapus"));
+		}
+		else{
+			$this->session->set_flashdata('msg',error_msg("data gagal dihapus"));
+		}
+		redirect('karyawan/index');
+	}
+
 
 
 

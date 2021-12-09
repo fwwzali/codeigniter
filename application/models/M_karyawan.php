@@ -50,6 +50,7 @@ class M_karyawan extends CI_Model
 		return $this->db->get('karyawan')->result();
 	}
 
+	//update karyawan
 	function update_karyawan($data)
 	{
 		$data_in = array(
@@ -62,5 +63,13 @@ class M_karyawan extends CI_Model
 		);
 		$this->db->where('id_karyawan',$data['id_karyawan']);
 		$this->db->update('karyawan',$data_in);
+	}
+
+	//delete karyawan
+	function delete_karyawan($id_karyawan)
+	{
+		$this->db->where('id_karyawan',$id_karyawan);
+		$this->db->delete('karyawan');
+		return $this->db->affected_rows();
 	}
 }

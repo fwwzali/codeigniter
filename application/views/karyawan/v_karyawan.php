@@ -37,6 +37,7 @@
       <td><?php echo $item->hire_date; ?></td>
       <td>
       	<a href="<?php echo base_url().'karyawan/update/'.$item->id_karyawan; ?>" class="btn btn-warning">Update</a>
+      	<a href="<?php echo base_url().'karyawan/delete/'.$item->id_karyawan; ?>" class="btn btn-danger">Delete</a>
       </td>
     </tr>
 	<?php endforeach; ?>
