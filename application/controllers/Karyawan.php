@@ -52,6 +52,21 @@ class Karyawan extends CI_Controller
 		}
 	}
 
+	//proses update
+	function update($id_karyawan = null)
+	{
+		if ($this->input->post()) {
+			
+		}
+		else{
+			//load form update
+			$data['title'] = "Form Update Data Karyawan";
+			$data['jabatan'] = $this->dbjabatan->get_jabatan_all();
+			$data['karyawan'] = $this->dbkaryawan->get_one($id_karyawan);
+			$this->load->view("karyawan/v_form",$data);
+		}
+	}
+
 
 
 
