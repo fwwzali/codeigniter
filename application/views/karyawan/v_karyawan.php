@@ -8,6 +8,10 @@
 <h2><?php echo $title; ?></h2> 
 <a href="<?php echo base_url() ?>karyawan/add" type="button" class="btn btn-primary">+ Tambah Karyawan</a>
 
+<!-- untuk menampilkan pesan sukses/gagal ketika proses input/update/delete -->
+<?php echo $this->session->flashdata('msg'); ?>
+
+
 <table class="table">
   <thead>
     <tr>

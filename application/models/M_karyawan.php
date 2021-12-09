@@ -40,6 +40,7 @@ class M_karyawan extends CI_Model
 			"hire_date" => $data['hire_date'],
 		);
 		$this->db->insert('karyawan',$data_in);
+		return $this->db->affected_rows();
 	}
 
 	//mengambil data satu karyawan sesuai dengan id_karyawan

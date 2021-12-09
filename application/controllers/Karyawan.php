@@ -41,7 +41,14 @@ class Karyawan extends CI_Controller
 	{
 		if ($this->input->post()) {
 			$data = $this->input->post();
-			$this->dbkaryawan->insert_karyawan($data);
+			$res = $this->dbkaryawan->insert_karyawan($data);
+			//isi pesan
+			if ($res > 0) {
+				$this->session->set_flashdata('msg',success_msg("data berhasil disimpan"));
+			}
+			else{
+				$this->session->set_flashdata('msg',error_msg("data gagal disimpan"));
+			}
 			redirect("karyawan/index");
 		}
 		else{
