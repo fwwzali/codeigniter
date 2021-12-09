@@ -41,4 +41,11 @@ class M_karyawan extends CI_Model
 		);
 		$this->db->insert('karyawan',$data_in);
 	}
+
+	//mengambil data satu karyawan sesuai dengan id_karyawan
+	function get_one($id_karyawan)
+	{
+		$this->db->where('id_karyawan',$id_karyawan);
+		return $this->db->get('karyawan')->result();
+	}
 }
