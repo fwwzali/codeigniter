@@ -21,5 +21,18 @@ class Login extends CI_Controller
 	{
 		$data = $this->input->post();
 		$check = $this->dblogin->check_login($data);
+		if ($check > 0) {
+			//proses masukan data ke session
+			//redirect ke home
+			$data_session = array(
+				"username" => $username,
+			);
+			$this->session->set_userdata($data_session);
+			redirect("karyawan");
+		}
+		else{
+			$this->session->set_flashdata('msg',error_msg('username dan password tidak sesuai'));
+			redirect("login");
+		}
 	}
 }
