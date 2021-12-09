@@ -51,6 +51,10 @@
   <form action="<?php echo base_url() ?>login/do_auth" method="POST">
     <h1 class="h3 mb-3 fw-normal">Sistem Pegawai</h1>
 
+    <?php 
+      echo $this->session->flashdata('msg');
+    ?>
+
     <div class="form-floating">
       <input type="text" class="form-control" id="floatingInput" placeholder="username" name="username">
       <label for="floatingInput">username</label>
