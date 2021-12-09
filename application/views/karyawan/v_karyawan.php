@@ -18,6 +18,7 @@
       <th scope="col">Username</th>
       <th scope="col">Password</th>
       <th scope="col">TMT</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -30,6 +31,9 @@
       <td><?php echo $item->username; ?></td>
       <td><?php echo $item->password; ?></td>
       <td><?php echo $item->hire_date; ?></td>
+      <td>
+      	<a href="<?php echo base_url().'karyawan/update/'.$item->id_karyawan; ?>" class="btn btn-warning">Update</a>
+      </td>
     </tr>
 	<?php endforeach; ?>
   </tbody>
