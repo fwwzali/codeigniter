@@ -29,7 +29,7 @@
 				<td><?php echo $item->nama_jabatan; ?></td>
 				<td>
 					<a href="<?php echo base_url().'jabatan/form_update/'.$item->id_jabatan ?>" class="btn btn-warning">UPDATE</a>
-					<a href="<?php echo base_url().'jabatan/delete/'.$item->id_jabatan ?>" class="btn btn-danger">DELETE</a>
+					<button data-href="<?php echo base_url().'jabatan/delete/'.$item->id_jabatan ?>" class="btn btn-danger delete" data-bs-toggle="modal" data-bs-target="#Modal">DELETE</button>
 				</td>
 			</tr>
 			<?php endforeach; ?>
