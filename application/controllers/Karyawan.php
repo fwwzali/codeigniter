@@ -26,7 +26,30 @@ class Karyawan extends CI_Controller
 		$this->load->library('pagination');
 		$config['base_url'] 	= base_url().'karyawan/index/';
 		$config['total_rows'] 	= $total_data[0]->total;
-		$config['per_page'] 	= 5; 
+		$config['per_page'] 	= 5;
+
+		//konfigurasi untuk tampilan link
+		$config['full_tag_open'] = '<nav><ul class="pagination">';
+		$config['full_tag_close'] = '</ul></nav>';
+		$config['num_tag_open'] = '<li class="page-item">';
+		$config['num_tag_close'] = '</li>';
+		$config['attributes'] = array('class' => 'page-link');
+		$config['first_link'] = 'awal';
+		$config['first_tag_open'] = '<li class="page-item">';
+		$config['first_tag_close'] = '</li>';
+		$config['last_link'] = 'akhir';
+		$config['last_tag_open'] = '<li class="page-item">';
+		$config['last_tag_close'] = '</li>';
+		$config['next_link'] = 'selanjutnya';
+		$config['next_tag_open'] = '<li class="page-item">';
+		$config['next_tag_close'] = '</li>';
+		$config['prev_link'] = 'sebelumnya';
+		$config['prev_tag_open'] = '<li class="page-item">';
+		$config['prev_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+
+
 
 		$this->pagination->initialize($config);
 

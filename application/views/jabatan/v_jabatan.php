@@ -3,16 +3,23 @@
 	$this->load->view('template/sidebar');
  ?>
 
-
-	<h3><?php echo $title; ?></h3>
 	<?php echo $this->session->flashdata('msg'); ?>
-	<p>data terakhir masuk : <?php echo $this->session->userdata("jabatan_terakhir"); ?></p>
-	<a href="<?php echo base_url()."jabatan/add_jabatan" ?>">Tambah Jabatan</a>
-	<table>
+
+	<h2><?php echo $title; ?></h2>
+
+	<div class="alert alert-secondary col-6" role="alert">
+	  <p><b>Data terakhir masuk : </b><?php echo $this->session->userdata("jabatan_terakhir"); ?></p>
+	</div>
+
+	
+	<a href="<?php echo base_url()."jabatan/add_jabatan" ?>" type="button" class="btn btn-primary float-end">+ Tambah Jabatan</a>
+
+
+	<table class="table">
 		<thead>
 			<tr>
-				<th>Nama Jabatan</th>
-				<th>Action</th>
+				<th scope="col">Nama Jabatan</th>
+				<th scope="col">Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -21,8 +28,8 @@
 			<tr>
 				<td><?php echo $item->nama_jabatan; ?></td>
 				<td>
-					<a href="<?php echo base_url().'jabatan/form_update/'.$item->id_jabatan ?>">UPDATE</a>
-					<a href="<?php echo base_url().'jabatan/delete/'.$item->id_jabatan ?>">DELETE</a>
+					<a href="<?php echo base_url().'jabatan/form_update/'.$item->id_jabatan ?>" class="btn btn-warning">UPDATE</a>
+					<a href="<?php echo base_url().'jabatan/delete/'.$item->id_jabatan ?>" class="btn btn-danger">DELETE</a>
 				</td>
 			</tr>
 			<?php endforeach; ?>
@@ -32,14 +39,6 @@
 
 
 
-<style type="text/css">
-	.success{
-		color: green;
-	}
-	.error{
-		color: red;
-	}
-</style>
 
  <?php 
  	$this->load->view('template/footer')

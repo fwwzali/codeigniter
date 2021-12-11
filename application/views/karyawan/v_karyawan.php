@@ -9,7 +9,7 @@
 <?php echo $this->session->flashdata('msg'); ?>
 
 <h2><?php echo $title; ?></h2> 
-<a href="<?php echo base_url() ?>karyawan/add" type="button" class="btn btn-primary">+ Tambah Karyawan</a>
+<a href="<?php echo base_url() ?>karyawan/add" type="button" class="btn btn-primary float-end">+ Tambah Karyawan</a>
 
 
 <table class="table">
